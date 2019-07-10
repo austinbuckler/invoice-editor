@@ -5,12 +5,11 @@
 
 .App-header {
   background-color: #23E5FF;
-  height: 256px;
   width: 100%;
   color: white;
   display: flex;
-  flex-direction: column;
   padding: 1.5rem;
+  align-items: center;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -18,4 +17,26 @@
 .App-heading {
   font-weight: 800;
   font-style: italic;
+}
+
+.App-subheadings {
+  display: flex;
+  margin-left: auto;
+  flex-direction: column;
+}
+
+.App-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-primary {
+  background: #23E5FF;
+  border: #23E5FF 0.09rem solid;
+  border-radius: 1rem;
+  display: flex;
+  color: #FFF;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }

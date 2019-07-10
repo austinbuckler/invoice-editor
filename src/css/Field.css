@@ -1,0 +1,9 @@
+.Field {
+  display: flex;
+  flex-direction: column;
+}
+
+.Field-label {
+  color: #23E5FF;
+  margin-bottom: 0.5rem;
+}

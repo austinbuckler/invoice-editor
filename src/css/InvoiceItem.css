@@ -1,13 +1,24 @@
-.InvoiceItem-input {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  border: #eee 0.09rem solid;
-
-}
 .InvoiceItem {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-end;
   margin: 0.5rem 0;
+}
+.InvoiceItem-input {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: #eee 0.09rem solid;
+}
+.InvoiceItem-input:read-only {
+  border: 0;
+}
+.InvoiceItem-btn {
+  border-radius: 50%;
+  border: #eee 0.09rem solid;
+  background: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }

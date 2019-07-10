@@ -23,18 +23,30 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h2 className='App-heading'>Invoice Editor</h2>
+        <div className='App-subheadings'>
+          <strong>Subtotal: </strong>
+          <strong>Tax (5%): </strong>
+          <strong>Total: </strong>
+        </div>
       </header>
-      {
-        items.map(item => 
-          <InvoiceItem 
-            key={item.id} 
-            item={item} 
-            onChange={handleItemUpdate}
-            onRemove={handleItemRemove} 
-          />
-        )
-      }
-      <button type='button' onClick={handleItemAdd}>Add +</button>
+      <div className='App-content'>
+        {
+          items.map(item => 
+            <InvoiceItem 
+              key={item.id} 
+              item={item} 
+              onChange={handleItemUpdate}
+              onRemove={handleItemRemove} 
+            />
+          )
+        }
+        <button 
+          type='button' 
+          className='btn-primary' 
+          onClick={handleItemAdd}
+          style={{ marginLeft: 'auto' }}
+        >Add +</button>
+      </div>
     </div>
   )
 }
