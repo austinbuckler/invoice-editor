@@ -2,6 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { 
   itemsSelector,
+  subtotalSelector,
+  taxSelector,
+  totalSelector,
 } from '../selectors'
 import {
   addItem,
@@ -10,10 +13,14 @@ import {
 } from '../actions'
 import '../css/App.css';
 import InvoiceItem from './InvoiceItem';
+import { fmtCurrency } from '../utils';
 
 function App() {
   const dispatch = useDispatch()
   const items = useSelector(itemsSelector)
+  const subtotal = useSelector(subtotalSelector)
+  const tax = useSelector(taxSelector)
+  const total = useSelector(totalSelector)
 
   function handleItemAdd() { dispatch(addItem()); }
   function handleItemUpdate(id, data) { dispatch(editItem(id, data)); }
@@ -24,9 +31,9 @@ function App() {
       <header className='App-header'>
         <h2 className='App-heading'>Invoice Editor</h2>
         <div className='App-subheadings'>
-          <strong>Subtotal: </strong>
-          <strong>Tax (5%): </strong>
-          <strong>Total: </strong>
+          <strong>Subtotal: {fmtCurrency(subtotal)}</strong>
+          <strong>Tax (5%): {fmtCurrency(tax)}</strong>
+          <strong>Total: {fmtCurrency(total)}</strong>
         </div>
       </header>
       <div className='App-content'>
@@ -44,7 +51,7 @@ function App() {
           type='button' 
           className='btn-primary' 
           onClick={handleItemAdd}
-          style={{ marginLeft: 'auto' }}
+          style={{ marginRight: 'auto' }}
         >Add +</button>
       </div>
     </div>

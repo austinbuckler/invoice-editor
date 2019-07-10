@@ -25,8 +25,8 @@ function InvoiceItem({ item, onChange = () => {}, onRemove = () => {}, }) {
       <Field className='InvoiceItem-input' value={name} name='name' placeholder='Item name' onChange={handleChange} />
       <Field className='InvoiceItem-input' value={quantity} name='quantity' placeholder='Quantity' type='number' onChange={handleChange} />
       <Field className='InvoiceItem-input' value={price.toLocaleString()} name='price' placeholder='Price' onChange={handleChange} />
-      <Field className='InvoiceItem-input' value={fmtCurrency(total)} readOnly label='Total' />
-      <button className='InvoiceItem-btn' type='button' onClick={onRemove}>&times;</button>
+      <Field className='InvoiceItem-input' value={fmtCurrency(total)} readOnly label='Total' disabled />
+      <button className='InvoiceItem-btn' type='button' onClick={_ => onRemove(id)}>&times;</button>
     </div>
   )
 }
