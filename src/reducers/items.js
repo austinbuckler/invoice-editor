@@ -6,7 +6,7 @@ const initialState = [
     id: 'init-00',
     name: 'Widget',
     quantity: 2,
-    price: 10,
+    price: 10
   },
   {
     id: 'init-01',
@@ -21,6 +21,6 @@ export default createReducer(initialState, {
   [REMOVE_ITEM]: (state, action) => state.filter(item => item.id !== action.payload),
   [EDIT_ITEM]: (state, { payload }) => state.map(item => {
     const isEditedItem = item.id === payload.id
-    return isEditedItem ? ({ ...item, ...payload, }) : item
-  }),
+    return isEditedItem ? ({ ...item, ...payload }) : item
+  })
 })
