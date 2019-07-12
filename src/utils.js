@@ -16,3 +16,10 @@ export function createReducer (initialState, handlers) {
     }
   }
 }
+
+export function updateItem (id, payload, items) {
+  return items.map(item => {
+    const isMatch = item.id === id
+    return isMatch ? ({ ...item, ...payload }) : item
+  })
+}

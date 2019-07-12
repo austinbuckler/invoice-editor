@@ -27,11 +27,11 @@ function InvoiceItem ({ item, onChange = () => {}, onRemove = () => {} }) {
 
   return (
     <div className='InvoiceItem'>
-      <Field className='InvoiceItem-input' value={name} name='name' placeholder='Item name' onChange={handleChange} />
-      <Field className='InvoiceItem-input' value={quantity} name='quantity' placeholder='Quantity' type='number' onChange={handleChange} />
-      <Field className='InvoiceItem-input' value={price.toLocaleString()} name='price' placeholder='Price' onChange={handleChange} />
-      <Field className='InvoiceItem-input' value={fmtCurrency(total)} readOnly label='Total' disabled />
-      <button className='InvoiceItem-btn' type='button' onClick={handleRemove}>&times;</button>
+      <Field data-testid={`${id}-field--name`} className='InvoiceItem-input' value={name} name='name' placeholder='Item name' onChange={handleChange} />
+      <Field data-testid={`${id}-field--quantity`} className='InvoiceItem-input' value={quantity} name='quantity' placeholder='Quantity' type='number' onChange={handleChange} />
+      <Field data-testid={`${id}-field--price`} className='InvoiceItem-input' value={price.toLocaleString()} name='price' placeholder='Price' onChange={handleChange} />
+      <Field data-testid={`${id}-field--total`} className='InvoiceItem-input' value={fmtCurrency(total)} readOnly label='Total' disabled />
+      <button data-testid={`${id}-btn--remove`} className='InvoiceItem-btn' type='button' onClick={handleRemove}>&times;</button>
     </div>
   )
 }
